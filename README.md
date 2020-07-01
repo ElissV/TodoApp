@@ -1,8 +1,9 @@
 
-• UI made with Bootstrap
-• Data stored in H2 in-memory database
-• Mobile-friendly
-• Doesn't have tests
+• UI made with Bootstrap<br/>
+• Data stored in H2 in-memory database<br/>
+• Mobile-friendly<br/>
+• Doesn't have tests<br/>
+
 
 
 Desktop view:
