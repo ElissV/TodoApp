@@ -39,8 +39,13 @@ public class ToDoListController {
 
     @PostMapping
     public void saveItem(@RequestBody String title) {
+        boolean doesntContainOnlySpaces =
+                !(title.replace(" ", "").isEmpty());
+
+        if (!title.isEmpty() && doesntContainOnlySpaces) {
             ToDoItem item = new ToDoItem(title);
             itemRepo.save(item);
+        }
     }
 
     @PatchMapping("/{id}")
