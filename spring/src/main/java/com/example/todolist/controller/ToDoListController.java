@@ -27,13 +27,13 @@ public class ToDoListController {
     }
 
     @GetMapping("/{id}")
-    public Optional<ToDoItem> getItem(@PathVariable(required = true) Long id) {
+    public Optional<ToDoItem> getItem(@PathVariable Long id) {
         return itemRepo.findById(id);
     }
 
     @GetMapping("/filterByStatus")
     public List<ToDoItem> getFilteredValues(
-            @RequestParam(required = true) Boolean isCompleted) {
+            @RequestParam Boolean isCompleted) {
         return itemRepo.findAllByIsCompleted(isCompleted);
     }
 
@@ -49,7 +49,7 @@ public class ToDoListController {
     }
 
     @PatchMapping("/{id}")
-    public void changeItemStatus(@PathVariable(required = true) Long id) {
+    public void changeItemStatus(@PathVariable Long id) {
         itemRepo.findById(id)
                 .map(item -> {
                     boolean isDone = item.getIsCompleted();
@@ -59,7 +59,7 @@ public class ToDoListController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteItem(@PathVariable(required = true) Long id) {
+    public void deleteItem(@PathVariable Long id) {
         itemRepo.deleteById(id);
     }
 

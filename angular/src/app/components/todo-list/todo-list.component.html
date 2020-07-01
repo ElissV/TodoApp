@@ -24,7 +24,7 @@
     </li>
 
     <li class="list-group-item filters">
-
+        
         <div class="filter-div">
             <button *ngFor="let filter of filterOptions" (click)="filterItems(filter)"
                 [ngClass]="chosenFilterValue == filter ? 'active' : 'inactive'">
