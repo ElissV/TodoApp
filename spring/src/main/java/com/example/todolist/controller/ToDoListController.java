@@ -39,8 +39,8 @@ public class ToDoListController {
     public void changeItemStatus(@PathVariable(required = true) Long id) {
         itemRepo.findById(id)
                 .map(item -> {
-                    boolean isDone = item.getIsDone();
-                    item.setIsDone(!isDone);
+                    boolean isDone = item.getIsCompleted();
+                    item.setIsCompleted(!isDone);
                     return itemRepo.save(item);
                 });
     }

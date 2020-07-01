@@ -17,6 +17,6 @@ public class ToDoItem {
     private String title;
 
     @Column(nullable = false)
-    private Boolean isDone = false;
+    private Boolean isCompleted = false;
 
 }
