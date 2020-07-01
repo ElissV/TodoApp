@@ -10,12 +10,13 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/todo")
+@CrossOrigin
 public class ToDoListController {
 
     private ToDoItemRepo itemRepo;
 
     @Autowired
-    public void setRepo(ToDoItemRepo itemRepo) {
+    public ToDoListController(ToDoItemRepo itemRepo) {
         this.itemRepo = itemRepo;
     }
 
