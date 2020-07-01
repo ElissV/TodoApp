@@ -1,15 +1,29 @@
 
-    
-    
-    <ul class="list-group">
-        <li class="list-group-item">
-            <input type="text" (keydown.enter)="saveItem()" 
-                [(ngModel)]="titleInput" placeholder="What needs to be done?">
-        </li>
-        <li class="list-group-item items" *ngFor="let item of todoList">
+
+
+<ul class="list-group">
+
+    <li class="list-group-item">
+
+        <input class="item-input" type="text" (keydown.enter)="saveItem()" 
+            [(ngModel)]="titleInput" placeholder="What needs to be done?">
+
+    </li>
+
+    <li class="list-group-item items" *ngFor="let item of todoList">
+        <div class="li-div">
+
+            <input class="form-check-input position-static" type="checkbox"
+                [checked]="item.isCompleted"
+                (change)="changeItemStatus(item.id)">
+
             {{ item.title }}
+
             <span class="close">
                 <button (click)="deleteItem(item.id)"> x </button>
             </span>
-        </li>
-    </ul>
+
+        </div>
+    </li>
+
+</ul>

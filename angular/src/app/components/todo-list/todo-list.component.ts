@@ -49,4 +49,12 @@ export class TodoListComponent implements OnInit {
     );
   }
 
+  changeItemStatus(itemId: number) {
+    this.todoItemService.changeItemStatus(itemId).subscribe(
+      data => {
+        this.getAllItems();
+      }
+    );
+  }
+
 }

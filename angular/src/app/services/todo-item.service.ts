@@ -28,4 +28,9 @@ export class TodoItemService {
     return this.http.delete(url);
   }
 
+  changeItemStatus(id: number) {
+    const url = this.baseUrl + id;
+    return this.http.patch(url, id);
+  }
+
 }

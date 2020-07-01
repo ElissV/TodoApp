@@ -4,6 +4,10 @@ input, button {
     outline: none;
 }
 
+.item-input {
+    width: 100%;
+}
+
 button {
     background-color: transparent;
 }
@@ -19,7 +23,14 @@ button {
 }
 
 .items {
-    display: inline-block;  
-    vertical-align: middle; 
-    padding: 20px;
+    font-size: 16pt;
+    font-weight: 400;
+}
+
+.li-div {
+    padding-left: 20px;
+}
+
+.form-check-input {
+    margin-right: 10px;
 }
