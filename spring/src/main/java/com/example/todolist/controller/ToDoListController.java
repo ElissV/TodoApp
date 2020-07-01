@@ -31,10 +31,16 @@ public class ToDoListController {
         return itemRepo.findById(id);
     }
 
-    @PostMapping()
+    @GetMapping("/filterByStatus")
+    public List<ToDoItem> getFilteredValues(
+            @RequestParam(required = true) Boolean isCompleted) {
+        return itemRepo.findAllByIsCompleted(isCompleted);
+    }
+
+    @PostMapping
     public void saveItem(@RequestBody String title) {
-        ToDoItem item = new ToDoItem(title);
-        itemRepo.save(item);
+            ToDoItem item = new ToDoItem(title);
+            itemRepo.save(item);
     }
 
     @PatchMapping("/{id}")

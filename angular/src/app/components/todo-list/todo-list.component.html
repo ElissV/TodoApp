@@ -11,7 +11,8 @@
     </li>
 
     <li class="list-group-item items" *ngFor="let item of todoList">
-        <div class="li-div">
+        <div class="li-div"
+            [ngClass]="{'line-through': item.isCompleted}">
 
             <input class="form-check-input position-static" type="checkbox"
                 [checked]="item.isCompleted"
@@ -24,6 +25,17 @@
             </span>
 
         </div>
+    </li>
+
+    <li class="list-group-item filters">
+
+        <div class="filter-div">
+            <button *ngFor="let filter of filterOptions" (click)="filterItems(filter)"
+                [ngClass]="chosenFilterValue == filter ? 'active' : 'inactive'">
+                {{ filter.name }}
+            </button>
+        </div>
+
     </li>
 
 </ul>

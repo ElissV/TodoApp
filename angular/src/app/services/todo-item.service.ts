@@ -33,4 +33,12 @@ export class TodoItemService {
     return this.http.patch(url, id);
   }
 
+  filterItemsByStatus(isCompleted: boolean): Observable<TodoItem[]> {
+    if (isCompleted == null) {
+      return this.getAllItems();
+    }
+    const url = this.baseUrl + "filterByStatus?isCompleted=" + isCompleted;
+    return this.http.get<TodoItem[]>(url);
+  }
+
 }

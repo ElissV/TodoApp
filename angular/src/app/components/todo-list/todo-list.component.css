@@ -31,6 +31,33 @@ button {
     padding-left: 20px;
 }
 
+.line-through {
+    color: #aaaaaa;
+    text-decoration: line-through;
+}
+
 .form-check-input {
     margin-right: 10px;
+}
+
+.active {
+    background-color: #80C612;
+    border-radius: 5px;
+}
+
+.inactive {
+    background-color: transparent;
+}
+
+.active, .inactive {
+    margin-right: 10px;
+}
+
+.filter-div {
+    display: table;
+    margin: 0px auto;
+}
+
+.filters {
+    width: 100%;
 }

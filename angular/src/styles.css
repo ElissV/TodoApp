@@ -1,3 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
-body { background-color: #E4FFB9; }
+body {
+    background-image: url('assets/images/background.jpg');
+}
