@@ -29,7 +29,6 @@ export class TodoListComponent implements OnInit {
   saveItem() {
     this.todoItemService.saveItem(this.titleInput).subscribe(
       data => {
-        console.log("Item submitted.");
         this.getAllItems();
       },
       error => {
@@ -37,6 +36,17 @@ export class TodoListComponent implements OnInit {
       }
     );
     this.titleInput = '';
+  }
+
+  deleteItem(id: number) {
+    this.todoItemService.deleteItem(id).subscribe(
+      data => {
+        this.getAllItems();
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }

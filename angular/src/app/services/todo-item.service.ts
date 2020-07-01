@@ -9,7 +9,7 @@ import { ifError } from 'assert';
 })
 export class TodoItemService {
 
-  private baseUrl = "http://localhost:8080/api/todo";
+  private baseUrl = "http://localhost:8080/api/todo/";
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +21,11 @@ export class TodoItemService {
 
   saveItem(title: string) {
     return this.http.post<string>(this.baseUrl, title);
+  }
+
+  deleteItem(id: number) {
+    const url = this.baseUrl + id;
+    return this.http.delete(url);
   }
 
 }

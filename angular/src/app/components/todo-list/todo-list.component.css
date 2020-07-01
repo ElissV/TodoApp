@@ -1,5 +1,25 @@
 
-input {
+input, button {
     border: none;
     outline: none;
+}
+
+button {
+    background-color: transparent;
+}
+
+.items:hover .close {
+    font-size: 16pt;
+    font-family: monospace;
+    display: block;
+}
+
+.close {
+    display: none;
+}
+
+.items {
+    display: inline-block;  
+    vertical-align: middle; 
+    padding: 20px;
 }

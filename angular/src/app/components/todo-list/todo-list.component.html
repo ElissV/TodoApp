@@ -1,10 +1,15 @@
 
+    
+    
     <ul class="list-group">
         <li class="list-group-item">
             <input type="text" (keydown.enter)="saveItem()" 
                 [(ngModel)]="titleInput" placeholder="What needs to be done?">
         </li>
-        <li class="list-group-item" *ngFor="let item of todoList">
+        <li class="list-group-item items" *ngFor="let item of todoList">
             {{ item.title }}
+            <span class="close">
+                <button (click)="deleteItem(item.id)"> x </button>
+            </span>
         </li>
     </ul>
