@@ -1,13 +1,18 @@
 
-.main-div {
-    margin-top: 20px;
-    max-width: 700px;
-    background-color: #E4FFB9;
-}
 
 h1 {
     font-size: 38pt;
     font-weight: 800;
     text-align: center;
     color: #80C612;
+}
+
+.main-div {
+    padding-top: 20px;
+    background-color: rgb(228, 255, 185);
+    height: 100vh;
+}
+
+.container {
+    max-width: 700px;
 }

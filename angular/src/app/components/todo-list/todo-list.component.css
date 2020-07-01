@@ -1,4 +1,6 @@
 
+
+
 input, button {
     border: none;
     outline: none;
@@ -32,7 +34,7 @@ button {
 }
 
 .line-through {
-    color: #aaaaaa;
+    color: #aaa;
     text-decoration: line-through;
 }
 
@@ -60,4 +62,11 @@ button {
 
 .filters {
     width: 100%;
+}
+
+.list-group {
+    margin-top: 10px;
+    -moz-box-shadow:    3px 3px 5px 3px #aaa;
+    -webkit-box-shadow: 3px 3px 5px 3px #aaa;
+    box-shadow:         3px 3px 5px 3px #aaa;
 }

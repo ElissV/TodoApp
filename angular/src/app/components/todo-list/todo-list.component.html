@@ -1,21 +1,17 @@
 
-
-
 <ul class="list-group">
 
     <li class="list-group-item">
 
-        <input class="item-input" type="text" (keydown.enter)="saveItem()" 
-            [(ngModel)]="titleInput" placeholder="What needs to be done?">
+        <input class="item-input" type="text" (keydown.enter)="saveItem()" [(ngModel)]="titleInput"
+            placeholder="What needs to be done?">
 
     </li>
 
     <li class="list-group-item items" *ngFor="let item of todoList">
-        <div class="li-div"
-            [ngClass]="{'line-through': item.isCompleted}">
+        <div class="li-div" [ngClass]="{'line-through': item.isCompleted}">
 
-            <input class="form-check-input position-static" type="checkbox"
-                [checked]="item.isCompleted"
+            <input class="form-check-input position-static" type="checkbox" [checked]="item.isCompleted"
                 (change)="changeItemStatus(item.id)">
 
             {{ item.title }}
