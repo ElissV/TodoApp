@@ -10,6 +10,7 @@ import { TodoItem } from 'src/app/class/todo-item';
 export class TodoListComponent implements OnInit {
 
   todoList: TodoItem[];
+  titleInput: string;
 
   constructor(private todoItemService: TodoItemService) { }
 
@@ -26,7 +27,16 @@ export class TodoListComponent implements OnInit {
   }
 
   saveItem() {
-    
+    this.todoItemService.saveItem(this.titleInput).subscribe(
+      data => {
+        console.log("Item submitted.");
+        this.getAllItems();
+      },
+      error => {
+        console.log(error);
+      }
+    );
+    this.titleInput = '';
   }
 
 }

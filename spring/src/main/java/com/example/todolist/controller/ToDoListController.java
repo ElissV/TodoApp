@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/todo")
-@CrossOrigin
+@CrossOrigin("http://localhost:4200")
 public class ToDoListController {
 
     private ToDoItemRepo itemRepo;
@@ -31,8 +31,9 @@ public class ToDoListController {
         return itemRepo.findById(id);
     }
 
-    @PostMapping
-    public void saveItem(@RequestBody ToDoItem item) {
+    @PostMapping()
+    public void saveItem(@RequestBody String title) {
+        ToDoItem item = new ToDoItem(title);
         itemRepo.save(item);
     }
 

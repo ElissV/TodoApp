@@ -1,7 +1,8 @@
 
     <ul class="list-group">
         <li class="list-group-item">
-            <input type="text" (keydown.enter)="saveItem()" placeholder="What needs to be done?">
+            <input type="text" (keydown.enter)="saveItem()" 
+                [(ngModel)]="titleInput" placeholder="What needs to be done?">
         </li>
         <li class="list-group-item" *ngFor="let item of todoList">
             {{ item.title }}

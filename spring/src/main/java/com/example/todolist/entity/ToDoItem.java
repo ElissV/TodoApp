@@ -19,4 +19,11 @@ public class ToDoItem {
     @Column(nullable = false)
     private Boolean isCompleted = false;
 
+
+    public ToDoItem() { }
+
+    public ToDoItem(String title) {
+        this.title = title;
+    }
+
 }
