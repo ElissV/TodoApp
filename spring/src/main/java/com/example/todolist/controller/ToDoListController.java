@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/todo")
@@ -24,9 +25,24 @@ public class ToDoListController {
         return itemRepo.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Optional<ToDoItem> getItem(@PathVariable(required = true) Long id) {
+        return itemRepo.findById(id);
+    }
+
     @PostMapping
     public void saveItem(@RequestBody ToDoItem item) {
         itemRepo.save(item);
+    }
+
+    @PatchMapping("/{id}")
+    public void changeItemStatus(@PathVariable(required = true) Long id) {
+        itemRepo.findById(id)
+                .map(item -> {
+                    boolean isDone = item.getIsDone();
+                    item.setIsDone(!isDone);
+                    return itemRepo.save(item);
+                });
     }
 
     @DeleteMapping("/{id}")
